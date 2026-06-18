@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "My Favorite Song";
@@ -19,20 +19,20 @@
         height: 100px;
         background-color: red;
         position: relative;
-        animation: move 3s infinite alternate;
-    }
-
-    @keyframes move {
-        from {
-            left: 0;
-        }
-
-        to {
-            left: 300px;
-        }
     }
 </style>
 
 <script>
-    console.log("Animation running...");
+    let box = document.getElementById("box");
+    let position = 0;
+    let direction = 1;
+
+    setInterval(() => {
+        position += 2 * direction;
+        box.style.left = position + "px";
+
+        if (position >= 300 || position <= 0) {
+            direction *= -1;
+        }
+    }, 10);
 </script>
