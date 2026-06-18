@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "My Favorite Song";
+}
+
+<h1>My Favorite Song</h1>
+
+<iframe width="560" height="315"
+        src="https://www.youtube.com/embed/0ZyA8Fz0xvE"
+        frameborder="0" allowfullscreen>
+</iframe>
+
+<div id="box"></div>
+
+<style>
+    #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation: move 3s infinite alternate;
+    }
+
+    @keyframes move {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: 300px;
+        }
+    }
+</style>
+
+<script>
+    console.log("Animation running...");
+</script>
